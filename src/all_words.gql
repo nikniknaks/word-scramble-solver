@@ -1,0 +1,7 @@
+query AllWords {
+  allWords {
+    data {
+      word
+    }
+  }
+}
