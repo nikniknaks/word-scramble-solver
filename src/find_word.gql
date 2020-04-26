@@ -1,0 +1,10 @@
+query FindWordByLength {
+  wordByLength(length: 8) {
+    word
+    letters {
+    	letter
+      occurrence
+    }
+    length
+  }
+}
