@@ -4,7 +4,34 @@ import '@material/mwc-textfield';
 import '@material/mwc-button';
 import { loader } from 'graphql.macro';
 
-const query = loader('./find_word.gql');
+// const query = loader('./find_word.gql'); // find word 
+const query = loader('./queries/add_word_paramd.gql'); // add word (parameterized)
+
+const word = {
+  word: "asinine",
+  letters: [
+      {
+        letter: "a",
+        occurrence: 3
+      },{
+        letter: "r",
+        occurrence: 2
+      },{
+        letter: "d",
+        occurrence: 1
+      },{
+        letter: "v",
+        occurrence: 1
+      },{
+        letter: "r",
+        occurrence: 1
+      },{
+        letter: "k",
+        occurrence: 1
+      }
+    ],
+  length: 8
+}
 
 const getDataFetch = async () => {
   const response =
@@ -16,7 +43,8 @@ const getDataFetch = async () => {
           Authorization : `Bearer ${process.env.REACT_APP_FAUNA_DB_KEY}`,
         },
         body: JSON.stringify({
-          query: query.loc.source.body
+          query: query.loc.source.body,
+          variables: { word: word }
         }),
       }
     )
