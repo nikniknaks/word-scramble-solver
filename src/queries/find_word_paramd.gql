@@ -1,0 +1,5 @@
+query FindWordParamd($word: WordInput!) {
+  GetWordByLetter(letters: $word) {
+    word
+  }
+}
