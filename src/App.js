@@ -6,6 +6,7 @@ import { loader } from 'graphql.macro';
 
 const query = loader('./queries/find_word_paramd.gql');
 
+let letterOccurrenceObject = {}
 
 const getDataFetch = async word => {
   const response =
@@ -23,6 +24,28 @@ const getDataFetch = async word => {
       }
     )
   console.log(await response.json())
+}
+
+const getValue = e => {
+  const letterArray = e.target.value.split("")
+  const letterObject = letterArray.reduce((accum, value) => {
+    if (accum[value] >= 1) {
+      accum[value]++
+      return accum
+    } else {
+      return {
+        ...accum,
+        [value]: 1
+      } 
+    }
+  },{})
+  letterOccurrenceObject = Object.keys(letterObject)
+    .reduce((accum, value) => {
+      return [
+        ...accum,
+        {letter: value, occurrence: letterObject[value]}
+      ]
+    },[])
 }
 
 function App() {
