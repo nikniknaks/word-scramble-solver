@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
-import '@material/mwc-textfield';
-import '@material/mwc-button';
-import { loader } from 'graphql.macro';
+import React from 'react'
+import './App.css'
+import '@material/mwc-textfield'
+import '@material/mwc-button'
+import { loader } from 'graphql.macro'
 
-const query = loader('./queries/find_word_paramd.gql');
+const query = loader('./queries/find_word_paramd.gql')
 
 let letterOccurrenceObject = {}
 
@@ -68,7 +68,7 @@ function App() {
       <div>
       </div>
     </div>
-  );
+  )
 }
 
 export default App;
