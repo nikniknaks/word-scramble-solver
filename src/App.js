@@ -4,6 +4,7 @@ import '@material/mwc-textfield';
 import '@material/mwc-button';
 import { loader } from 'graphql.macro';
 
+const query = loader('./queries/find_word_paramd.gql');
 
 const word = {
   word: "asinine",
@@ -32,7 +33,6 @@ const word = {
 }
 
 const getDataFetch = async () => {
-const query = loader('./queries/find_word_paramd.gql'); 
   const response =
     await fetch("https://graphql.fauna.com/graphql",
       {
