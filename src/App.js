@@ -7,7 +7,7 @@ import { loader } from 'graphql.macro';
 const query = loader('./queries/find_word_paramd.gql');
 
 
-const getDataFetch = async () => {
+const getDataFetch = async word => {
   const response =
     await fetch("https://graphql.fauna.com/graphql",
       {
