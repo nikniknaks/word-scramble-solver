@@ -30,7 +30,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         Word Scramble Solver
-        <mwc-textfield label="Enter Anagram" raised></mwc-textfield>
+        <input
+          onChange={getValue}
+          label="Enter Anagram"
+        >
+        </input>
         <mwc-button
           label="Enter Anagram"
           onClick={() => getDataFetch(letterOccurrenceObject)}
