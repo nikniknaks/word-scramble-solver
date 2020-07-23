@@ -6,31 +6,6 @@ import { loader } from 'graphql.macro';
 
 const query = loader('./queries/find_word_paramd.gql');
 
-const word = {
-  word: "asinine",
-  letters: [
-      {
-        letter: "a",
-        occurrence: 3
-      },{
-        letter: "r",
-        occurrence: 2
-      },{
-        letter: "d",
-        occurrence: 1
-      },{
-        letter: "v",
-        occurrence: 1
-      },{
-        letter: "r",
-        occurrence: 1
-      },{
-        letter: "k",
-        occurrence: 1
-      }
-    ],
-  length: 8
-}
 
 const getDataFetch = async () => {
   const response =
