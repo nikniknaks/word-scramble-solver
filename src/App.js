@@ -9,6 +9,11 @@ const query = loader('./queries/find_word_paramd.gql')
 let letterOccurrenceObject = {}
 
 const getDataFetch = async word => {
+  // console.log("getDataFetch()", process.env.REACT_APP_FAUNA_DB_KEY);
+  // console.log(JSON.stringify({
+  //   query: query.loc.source.body,
+  //   variables: { word: word }
+  // }, false, '    '));
   const response =
     await fetch("https://graphql.fauna.com/graphql",
       {
